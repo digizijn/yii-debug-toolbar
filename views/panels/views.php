@@ -90,7 +90,7 @@ $index = 1;
                                 </tr>
                                 <?php endif; ?>
                                 <tr>
-                                    <th>Render method</th><td><?php echo $item['backTrace']['function'] ?></td>
+                                    <th>Render method</th><td><?php echo $item['backTrace']['function'] ?? '' ?></td>
                                 </tr>
                                 <tr>
                                     <th>View file</th>
