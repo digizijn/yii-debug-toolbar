@@ -110,13 +110,9 @@ class YiiDebugToolbarPanelSql extends YiiDebugToolbarPanel
     public function getMenuSubTitle($f=4)
     {
         if (false !== $this->_dbConnections) {
-        	list ($count, $time) = Yii::app()->db->getStats();
+        	[$count, $time] = Yii::app()->db->getStats();
 
-			if(!is_array($time)){
-				$time	= [1, $time];
-			}
-
-        	return $count . ($count > 0 ? ('/'. vsprintf('%0.'.$f.'F', $time) . 's') : '');
+        	return $count . ($count > 0 ? ('/'. vsprintf('%0.'.$f.'F', [$time]) . 's') : '');
         }
         return YiiDebug::t('No active connections');
     }
