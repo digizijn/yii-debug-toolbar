@@ -170,9 +170,9 @@ class YiiDebugToolbarPanelSql extends YiiDebugToolbarPanel
     {
         $vals = array(
             'w' => (int) ($secs / 86400 / 7),
-            'd' => $secs / 86400 % 7,
-            'h' => $secs / 3600 % 24,
-            'm' => $secs / 60 % 60,
+            'd' => (int) ($secs / 86400) % 7,
+            'h' => (int) ($secs / 3600) % 24,
+            'm' => (int) ($secs / 60) % 60,
             's' => $secs % 60
         );
         $result = array();
